@@ -1,0 +1,30 @@
+<form name="dataEntryForm" id="dataEntryForm">
+    <div class="form-group" ng-class="{error: dataEntryForm.name.$invalid && !dataEntryForm.name.$pristine}">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" ng-model="pr.project.name" required>
+        <span ng-show="dataEntryForm.name.$error.required && !dataEntryForm.name.$pristine" class="help-inline">
+            Required {{dataEntryForm.name.$pristine}}</span>
+    </div>
+
+    <div class="form-group" ng-class="{error: dataEntryForm.site.$invalid && !dataEntryForm.site.$pristine}">
+        <label for="site">Website</label>
+        <input type="url" class="form-control" id="site" name="site" ng-model="pr.project.site" required>
+        <span ng-show="dataEntryForm.site.$error.required && !dataEntryForm.name.$pristine" class="help-inline">
+            Required</span>
+        <span ng-show="dataEntryForm.site.$error.url" class="help-inline">
+            Not a URL</span>
+    </div>
+
+
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" name="description" ng-model="pr.project.description"></textarea>
+
+    <br>
+    <a href="#/" class="btn btn-warning">Cancel</a>
+    <button ng-click="save()" ng-disabled="dataEntryForm.$invalid"
+            class="btn btn-primary">Save
+    </button>
+    <button ng-click="destroy()"
+            ng-show="project.$remove" class="btn btn-danger">Delete
+    </button>
+</form>
