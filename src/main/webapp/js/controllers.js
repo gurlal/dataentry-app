@@ -25,10 +25,8 @@ function DataEntryController($scope, $http, $location) {
     $scope.name = "Sunshine";
 
     $scope.save = function() {
-       /* $.getJSON('/projects/addProject', $("#dataEntryForm").serialize(), function(data){
-            $location.path('/projects');
-        });*/
-        $http({method: 'POST', url: '/projects/addProject', params: $scope.pr}).success(
+        $http({method: 'POST', url: '/projects/addProject', headers: {'Content-Type': 'application/json'},
+			data: $scope.pr}).success(
             function(data){
                 $location.path('/projects');
             }

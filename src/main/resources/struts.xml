@@ -8,8 +8,14 @@
   <constant name="struts.devMode" value="true"/>
 
   <constant name="struts.convention.default.parent.package" value="angularstruts"/>
-  <package name="angularstruts" extends="json-default">
-
+  <package name="angularstruts" extends="struts-default,json-default">
+      <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+              <interceptor-stack name="projectStack">
+                  <interceptor-ref name="json" />
+              </interceptor-stack>
+      </interceptors>
+      <default-interceptor-ref name="projectStack" />
     <action name="dataEntryApp" class="com.nezatech.actions.DataEntryAppAction">
         <result>/jsp/dataEntryApp.jsp</result>
     </action>

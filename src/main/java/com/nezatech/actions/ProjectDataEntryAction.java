@@ -9,7 +9,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 @Namespace("/projects")
 @Result(name = "success", type = "json")
-@ParentPackage("json-default")
+@ParentPackage("angularstruts")
 public class ProjectDataEntryAction extends ActionSupport {
     private Project project;
 
@@ -25,8 +25,7 @@ public class ProjectDataEntryAction extends ActionSupport {
         return project;
     }
 
-    public void setProject(String project) throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-        this.project = mapper.readValue(project, Project.class);
+    public void setProject(Project project) throws Exception {
+		this.project = project;
     }
 }
