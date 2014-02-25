@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-angular.module('angularstruts', [], function ($routeProvider) {
+angular.module('angularstruts', ['ngRoute'], function ($routeProvider) {
     $routeProvider.when('/projects', {
         templateUrl: '/partials/projects.html',
         controller: DataEntryController

@@ -43,12 +43,23 @@ function DataEntryController($scope, $http, $location) {
 			data: $scope.pr}
 		).success(function(data) {
 				 $scope.init();
+				 $scope.resetDataEntryForm();
 				 $scope.listViewActive = true;
 			 });
     };
 
 	$scope.new = function() {
 		$scope.listViewActive = false;
+	};
+
+	$scope.resetDataEntryForm = function() {
+		$scope.dataEntryForm.$setPristine();
+		$scope.pr = {};
+	};
+
+	$scope.cancelDataEntryForm = function() {
+		$scope.resetDataEntryForm();
+		$scope.listViewActive = true;
 	}
 }
 DataEntryController.$inject = ['$scope', '$http', '$location'];

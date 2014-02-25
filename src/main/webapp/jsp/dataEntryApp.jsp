@@ -66,13 +66,11 @@
 </div>
 
 <script src="../js/jquery-1.10.2.js"></script>
-<script src="<s:url value="../js/lib/angular/angular.min.js" />"></script>
-<script src="<s:url value="../js/lib/angular/angular-bootstrap.min.js" />"></script>
-<script src="<s:url value="../js/lib/angular/angular-bootstrap-prettify.min.js" />"></script>
-<script src="<s:url value="../js/directives.js" />"></script>
-<script src="<s:url value="../js/controllers.js" />"></script>
-<script src="<s:url value="../js/startup.js" />"></script>
-<script src="<s:url value="../js/bootstrap.min.js" />"></script>
-
+<script src="../js/lib/angular/angular.js"></script>
+<script src="js/lib/angular/angular-route.js"></script>
+<script src="../js/directives.js"> </script>
+<script src="../js/controllers.js"></script>
+<script src="../js/startup.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>
