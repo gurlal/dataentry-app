@@ -21,7 +21,7 @@
 angular.module('angularstruts', [], function ($routeProvider) {
     $routeProvider.when('/projects', {
         templateUrl: '/partials/projects.html',
-        controller: ApacheProjectsController
+        controller: DataEntryController
     }).when('/dataEntry', {
         templateUrl: '/partials/dataEntry.html',
         controller: DataEntryController

@@ -21,10 +21,19 @@
 package com.nezatech.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
 
 /**
  * <code>Set welcome message.</code>
  */
+@Namespace("/")
+@ParentPackage("angularstruts")
+@Action(
+		value = "dataEntryApp",
+		results = { @Result(name = "success", location = "/jsp/dataEntryApp.jsp") })
 public class DataEntryAppAction extends ActionSupport {
 
     private static final long serialVersionUID = -3243216917801206214L;

@@ -22,30 +22,33 @@ function AppController($scope) { }
 AppController.$inject = ['$scope'];
 
 function DataEntryController($scope, $http, $location) {
-    $scope.name = "Sunshine";
+    $scope.listViewActive = true;
+	$scope.init = function() {
+		$http({method: 'GET', url: '/projects'}).
+			success(function(data) {
+				$scope.projects = data.projectNames;
+			}).
+			error(function(data, status, headers, config) {
+				alert("Could not receive project names");
+			});
+	};
+
+	$scope.init();
 
     $scope.save = function() {
-        $http({method: 'POST', url: '/projects/addProject', headers: {'Content-Type': 'application/json'},
-			data: $scope.pr}).success(
-            function(data){
-                $location.path('/projects');
-            }
-        );
-    }
-}
-DataEntryController.$inject = ['$scope', '$http', '$location'];
-
-function ApacheProjectsController($scope, $http) {
-    this.init = function() {
-        $http({method: 'GET', url: '/projects'}).
-          success(function(data) {
-            $scope.projects = data.projectNames;
-          }).
-          error(function(data, status, headers, config) {
-            alert("Could not receive project names");
-          });
+       	 $http({
+			method: 'POST',
+			url: '/projects/addProject',
+			headers: {'Content-Type': 'application/json'},
+			data: $scope.pr}
+		).success(function(data) {
+				 $scope.init();
+				 $scope.listViewActive = true;
+			 });
     };
 
-    this.init();
+	$scope.new = function() {
+		$scope.listViewActive = false;
+	}
 }
-ApacheProjectsController.$inject = ['$scope', '$http'];
+DataEntryController.$inject = ['$scope', '$http', '$location'];

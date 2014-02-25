@@ -16,8 +16,5 @@
               </interceptor-stack>
       </interceptors>
       <default-interceptor-ref name="projectStack" />
-    <action name="dataEntryApp" class="com.nezatech.actions.DataEntryAppAction">
-        <result>/jsp/dataEntryApp.jsp</result>
-    </action>
   </package>
 </struts>
