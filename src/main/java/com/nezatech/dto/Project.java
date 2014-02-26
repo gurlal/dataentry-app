@@ -13,7 +13,17 @@ public class Project {
     private String site;
     private String description;
 
-    public String getName() {
+	public Project() {
+
+	}
+
+	public Project(String name, String site, String description) {
+		this.name = name;
+		this.site = site;
+		this.description = description;
+	}
+
+	public String getName() {
         return name;
     }
 

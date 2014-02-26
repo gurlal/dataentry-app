@@ -20,6 +20,7 @@
  */
 package com.nezatech.actions;
 
+import com.nezatech.dto.Project;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -34,37 +35,37 @@ public class ProjectsAction extends ActionSupport {
 
     private static final long serialVersionUID = 9037336532369476225L;
 
-    public static List<String> projectNamesdyn = new ArrayList<String>();
+    public static List<Project> projectNamesdyn = new ArrayList<Project>();
 
-    private List<String> projectNames = new ArrayList<String>();
+    private List<Project> projects = new ArrayList<Project>();
 
     public String execute() throws Exception {
 
-        projectNames.add("Apache Struts");
-        projectNames.add("Apache Log4j");
-        projectNames.add("Apache Tomcat");
-        projectNames.add("Apache Maven");
-        projectNames.add("Apache Ant");
-        projectNames.add("Apache Log4Net");
-        projectNames.add("Apache Log4Cxx");
-        projectNames.add("Apache Chainsaw");
-        projectNames.add("Apache Incubator");
-        projectNames.add("Apache Hadoop");
-        projectNames.add("Apache OpenOffice");
-        projectNames.add("Apache Mahout");
-        projectNames.add("Apache Tapestry");
-        projectNames.add("Apache Jena");
-        projectNames.add("Apache Solr");
-        projectNames.add("Apache Cayenne");
-        projectNames.add("Apache OpenEJB");
-        projectNames.add("Apache Deltaspike");
-        projectNames.add("Apache Cordova");
-        projectNames.addAll(projectNamesdyn);
+        projects.add(new Project("Apache Struts", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Log4j", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Tomcat", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Maven", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Ant", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Log4Net", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Log4Cxx", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Chainsaw", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Incubator", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Hadoop", "http://myTest", "My Test"));
+        projects.add(new Project("Apache OpenOffice", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Mahout", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Tapestry", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Jena", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Solr", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Cayenne", "http://myTest", "My Test"));
+        projects.add(new Project("Apache OpenEJB", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Deltaspike", "http://myTest", "My Test"));
+        projects.add(new Project("Apache Cordova", "http://myTest", "My Test"));
+        projects.addAll(projectNamesdyn);
 
         return SUCCESS;
     }
 
-    public List<String> getProjectNames() {
-        return projectNames;
+    public List<Project> getProjects() {
+        return projects;
     }
 }

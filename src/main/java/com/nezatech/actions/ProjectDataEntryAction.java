@@ -17,7 +17,7 @@ public class ProjectDataEntryAction extends ActionSupport {
             value = "addProject",
             results = { @Result(name = "success", type = "json") })
     public String addProject() {
-        ProjectsAction.projectNamesdyn.add(this.project.getName());
+        ProjectsAction.projectNamesdyn.add(this.project);
         return SUCCESS;
     }
 

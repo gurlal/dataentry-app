@@ -26,7 +26,8 @@ function DataEntryController($scope, $http, $location) {
 	$scope.init = function() {
 		$http({method: 'GET', url: '/projects'}).
 			success(function(data) {
-				$scope.projects = data.projectNames;
+				$scope.projects = data.projects;
+				$scope.gridOptions = { data: 'projects' };
 			}).
 			error(function(data, status, headers, config) {
 				alert("Could not receive project names");
@@ -53,8 +54,13 @@ function DataEntryController($scope, $http, $location) {
 	};
 
 	$scope.resetDataEntryForm = function() {
-		$scope.dataEntryForm.$setPristine();
+		$('#dataEntryForm')[0].reset();
 		$scope.pr = {};
+		$scope.dataEntryForm.$setPristine();
+		$scope.dataEntryForm.name.$error.required = true;
+		$scope.dataEntryForm.site.$error.required = true;
+		/*$scope.dataEntryForm.site.$error.url = false;*/
+
 	};
 
 	$scope.cancelDataEntryForm = function() {

@@ -18,7 +18,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-angular.module('angularstruts', ['ngRoute'], function ($routeProvider) {
+angular.module('angularstruts', ['ngRoute', 'ngGrid'], function ($routeProvider) {
     $routeProvider.when('/projects', {
         templateUrl: '/partials/projects.html',
         controller: DataEntryController
@@ -28,8 +28,8 @@ angular.module('angularstruts', ['ngRoute'], function ($routeProvider) {
     }).otherwise({ redirectTo: '/dataEntry' });
 });
 
-angular.element(document).ready(function () {
+/*angular.element(document).ready(function () {
     angular.bootstrap(document, ['angularstruts']);
 
-});
+});*/
 
