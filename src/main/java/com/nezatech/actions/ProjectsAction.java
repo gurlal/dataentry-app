@@ -41,25 +41,25 @@ public class ProjectsAction extends ActionSupport {
 
     public String execute() throws Exception {
 
-        projects.add(new Project("Apache Struts", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Log4j", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Tomcat", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Maven", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Ant", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Log4Net", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Log4Cxx", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Chainsaw", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Incubator", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Hadoop", "http://myTest", "My Test"));
-        projects.add(new Project("Apache OpenOffice", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Mahout", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Tapestry", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Jena", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Solr", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Cayenne", "http://myTest", "My Test"));
-        projects.add(new Project("Apache OpenEJB", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Deltaspike", "http://myTest", "My Test"));
-        projects.add(new Project("Apache Cordova", "http://myTest", "My Test"));
+        projects.add(new Project(1, "Apache Struts", "http://myTest", "My Test"));
+        projects.add(new Project(2, "Apache Log4j", "http://myTest", "My Test"));
+        projects.add(new Project(3, "Apache Tomcat", "http://myTest", "My Test"));
+        projects.add(new Project(4, "Apache Maven", "http://myTest", "My Test"));
+        projects.add(new Project(5, "Apache Ant", "http://myTest", "My Test"));
+        projects.add(new Project(6, "Apache Log4Net", "http://myTest", "My Test"));
+        projects.add(new Project(7, "Apache Log4Cxx", "http://myTest", "My Test"));
+        projects.add(new Project(8, "Apache Chainsaw", "http://myTest", "My Test"));
+        projects.add(new Project(9, "Apache Incubator", "http://myTest", "My Test"));
+        projects.add(new Project(10, "Apache Hadoop", "http://myTest", "My Test"));
+        projects.add(new Project(11, "Apache OpenOffice", "http://myTest", "My Test"));
+        projects.add(new Project(12, "Apache Mahout", "http://myTest", "My Test"));
+        projects.add(new Project(13, "Apache Tapestry", "http://myTest", "My Test"));
+        projects.add(new Project(14, "Apache Jena", "http://myTest", "My Test"));
+        projects.add(new Project(15, "Apache Solr", "http://myTest", "My Test"));
+        projects.add(new Project(16, "Apache Cayenne", "http://myTest", "My Test"));
+        projects.add(new Project(17, "Apache OpenEJB", "http://myTest", "My Test"));
+        projects.add(new Project(18, "Apache Deltaspike", "http://myTest", "My Test"));
+        projects.add(new Project(19, "Apache Cordova", "http://myTest", "My Test"));
         projects.addAll(projectNamesdyn);
 
         return SUCCESS;

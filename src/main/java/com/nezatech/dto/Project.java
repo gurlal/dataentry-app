@@ -9,12 +9,20 @@ package com.nezatech.dto;
  */
 
 public class Project {
+	private Integer id;
     private String name;
     private String site;
     private String description;
 
 	public Project() {
 
+	}
+
+	public Project( Integer id, String name, String site, String description) {
+		this.name = name;
+		this.site = site;
+		this.description = description;
+		this.id = id;
 	}
 
 	public Project(String name, String site, String description) {
@@ -47,34 +55,45 @@ public class Project {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Project)) return false;
+	public Integer getId() {
+		return id;
+	}
 
-        Project project = (Project) o;
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-        if (description != null ? !description.equals(project.description) : project.description != null) return false;
-        if (name != null ? !name.equals(project.name) : project.name != null) return false;
-        if (site != null ? !site.equals(project.site) : project.site != null) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
-        return true;
-    }
+		Project project = (Project) o;
 
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (site != null ? site.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        return result;
-    }
+		if (description != null ? !description.equals(project.description) : project.description != null) return false;
+		if (id != null ? !id.equals(project.id) : project.id != null) return false;
+		if (name != null ? !name.equals(project.name) : project.name != null) return false;
+		if (site != null ? !site.equals(project.site) : project.site != null) return false;
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "name='" + name + '\'' +
-                ", site='" + site + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = name != null ? name.hashCode() : 0;
+		result = 31 * result + (site != null ? site.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (id != null ? id.hashCode() : 0);
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "Project{" +
+				"name='" + name + '\'' +
+				", site='" + site + '\'' +
+				", description='" + description + '\'' +
+				", id=" + id +
+				'}';
+	}
 }
